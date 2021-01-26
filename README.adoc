@@ -1,6 +1,6 @@
 = Webproject
 
-Structure in our project
+Structure in our project after all the steeps
 
 Webproject
 
@@ -13,7 +13,27 @@ Webproject
     - package.json
     - rollup.config.js    
 |- my-app
+    - app,js
+    - index.html
+    - lit-html.js
+    - style.css
 ----
+
+== Fast forward
+
+[source,bash]
+----
+curl https://raw.githubusercontent.com/jarryDk/simple-webproject/main/createNewWebproject.sh  &&  \
+chmod +x createNewWebproject.sh  && \
+createNewWebproject.sh -f $HOME/webproject -n hello-world
+----
+
+args to createNewWebproject.sh
+
+ - f = folder
+ - n = name
+ - r = remove folder/name before create clean project
+
 
 == Steeps
 
