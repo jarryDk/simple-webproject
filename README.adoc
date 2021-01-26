@@ -1,8 +1,62 @@
 = Webproject
 
-Structure in our project after all the steeps
+This project is meant to be a fast way to start coding a webproject using https://developer.mozilla.org/en-US/docs/Web/Web_Components[web components].
 
-Webproject
+You can use `lit-html` to render the page or create our own templates.
+
+The project show how to use https://rollupjs.org[rollup.js] to make lit-html fit into one file. 
+
+== Fast forward
+
+Structure in our project after `Fast forward` 
+
+----
+|- deps
+    - package-lock.json
+    - package.json
+    - rollup.config.js    
+|- my-app
+    - app,js
+    - index.html
+    - lit-html.js
+    - style.css
+----
+
+The next command will 
+ 
+ - download the script link:createNewWebproject.sh[createNewWebproject.sh] 
+ - change mode to allow exeute link:createNewWebproject.sh[createNewWebproject.sh]
+ - exeute link:createNewWebproject.sh[createNewWebproject.sh] and tell it to create the project `hello-world` in the folder `webproject` under my home folder.
+
+
+[source,bash]
+----
+curl https://raw.githubusercontent.com/jarryDk/simple-webproject/main/createNewWebproject.sh -o createNewWebproject.sh &&  \
+chmod +x   && \
+./createNewWebproject.sh -f $HOME/webproject -n hello-world  && \
+rm createNewWebproject.sh
+----
+
+=== createNewWebproject.sh
+
+Args to createNewWebproject.sh
+
+ - f = folder
+ - n = name
+ - r = remove folder/name before create clean project
+
+
+=== Use browser-sync to sync change on disk to the browser 
+
+[source,bash]
+----
+cd $HOME/webproject/hello-world
+browser-sync start -f . -s
+----
+
+== All steeps
+
+Structure in our project after `All steeps`
 
 ----
 |- deps
@@ -18,25 +72,6 @@ Webproject
     - lit-html.js
     - style.css
 ----
-
-== Fast forward
-
-[source,bash]
-----
-curl https://raw.githubusercontent.com/jarryDk/simple-webproject/main/createNewWebproject.sh -o createNewWebproject.sh &&  \
-chmod +x createNewWebproject.sh  && \
-./createNewWebproject.sh -f $HOME/webproject -n hello-world  && \
-rm createNewWebproject.sh
-----
-
-args to createNewWebproject.sh
-
- - f = folder
- - n = name
- - r = remove folder/name before create clean project
-
-
-== Steeps
 
 [source,bash]
 ----
@@ -98,12 +133,6 @@ cp ../deps/dist/lib/lit-html.js lit-html.js
 ----
 npm install -g browser-sync
 ----
-
-[source,bash]
-----
-browser-sync start -f . -s
-----
-
 
 == Links
 
