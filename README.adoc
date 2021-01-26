@@ -1,0 +1,90 @@
+= Webproject
+
+Structure in our project
+
+Webproject
+
+----
+|- deps
+    |- dist
+        - lit-html.js
+    | - node_modules
+    - package-lock.json
+    - package.json
+    - rollup.config.js    
+|- my-app
+----
+
+== Steeps
+
+[source,bash]
+----
+sudo dnf install npm
+----
+
+[source,bash]
+----
+sudo npm install --global rollup
+----
+
+[source,bash]
+----
+mkdir deps
+cd deps
+----
+
+[source,bash]
+----
+npm init -y
+----
+
+[source,bash]
+----
+npm install lit-html
+----
+
+[source,javascript]
+----
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+
+export default [{
+  input: ['./node_modules/lit-html/lit-html.js'],
+    output: { dir: "dist/lib", format: "esm" },
+  plugins: [nodeResolve({
+    browser: true
+  })]
+}]
+----
+
+[source,bash]
+----
+npm install @rollup/plugin-node-resolve --save-dev
+----
+
+[source,bash]
+----
+rollup -c
+----
+
+[source,bash]
+----
+cd ..
+mkdir my-app
+cp ../deps/dist/lib/lit-html.js lit-html.js 
+----
+
+[source,bash]
+----
+npm install -g browser-sync
+----
+
+[source,bash]
+----
+browser-sync start -f . -s
+----
+
+
+== Links
+
+- https://rollupjs.org
+- https://www.npmjs.com/package/lit-html
