@@ -23,9 +23,10 @@ Webproject
 
 [source,bash]
 ----
-curl https://raw.githubusercontent.com/jarryDk/simple-webproject/main/createNewWebproject.sh  &&  \
+curl https://raw.githubusercontent.com/jarryDk/simple-webproject/main/createNewWebproject.sh -o createNewWebproject.sh &&  \
 chmod +x createNewWebproject.sh  && \
-createNewWebproject.sh -f $HOME/webproject -n hello-world
+./createNewWebproject.sh -f $HOME/webproject -n hello-world  && \
+rm createNewWebproject.sh
 ----
 
 args to createNewWebproject.sh

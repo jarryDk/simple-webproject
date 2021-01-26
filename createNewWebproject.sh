@@ -46,5 +46,6 @@ fi
 git clone https://github.com/jarryDk/simple-webproject.git $PROJECT_FOLDER
 
 rm -fr $PROJECT_FOLDER/.git
+rm -f $PROJECT_FOLDER/createNewWebproject.sh
 
 mv "$PROJECT_FOLDER/my-app" "$PROJECT_FOLDER/$PROJECT_NAME-webapp"
